@@ -1,0 +1,26 @@
+---
+title: vue demo1
+---
+<script src="https://fogray.github.io/dc-web/skins/js/jquery-1.11.3.min.js"></script>
+<script src="//cdn.bootcss.com/vue/2.1.6/vue.min.js"></script>
+<script>
+  $(function(){
+    var vm = new Vue({
+      el: '#divList',
+      data:{
+        lists: ['小明','小黑','小白']
+      },
+      method: {
+        getList: function(){
+          vm.lists = ['大明','大黑','大白'];
+        }
+      }
+    });
+    setTimeout(function(){vm.getList();}, 5000);
+  });
+</script>
+<div id="divList">
+  <div v-for="l in lists">
+    <div v-bind:data-a="l">{{l}}</div>
+  </div>
+</div>
