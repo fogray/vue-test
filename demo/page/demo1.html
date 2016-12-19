@@ -21,6 +21,6 @@ title: vue demo1
 </script>
 <div id="divList">
   <div v-for="l in lists">
-    <div v-bind:title="l">{\{ l \}}</div>
+    <div v-bind:title="l" v-html="l">{\{ l \}}</div>
   </div>
 </div>
